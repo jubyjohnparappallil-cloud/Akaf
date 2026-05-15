@@ -8,7 +8,7 @@ const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID';      // EmailJS > Email Services >
 const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';    // EmailJS > Email Templates > Template ID
 
 // Business WhatsApp (country code + number, no + or spaces)
-const BUSINESS_WHATSAPP = '971544630447';           // WhatsApp number
+const BUSINESS_WHATSAPP = '971528434127';           // WhatsApp number
 
 // Clinic name
 const CLINIC_NAME = 'Shanthi Wellness Medical Center';
