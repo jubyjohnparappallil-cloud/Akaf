@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Offer - Shanthi Wellness</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f9fef9 0%, #e8f5e9 50%, #f1f8e9 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .welcome-container {
+            text-align: center;
+            max-width: 520px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 40px 30px;
+            box-shadow: 0 20px 60px rgba(30, 80, 30, 0.12);
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .logo {
+            height: 100px;
+            object-fit: contain;
+            margin-bottom: 24px;
+            animation: fadeInScale 0.8s ease 0.2s both;
+        }
+
+        .message {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(18px, 4vw, 24px);
+            color: #1B5E20;
+            line-height: 1.6;
+            margin-bottom: 24px;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+
+        .message strong {
+            color: #c0392b;
+        }
+
+        .poster {
+            width: 100%;
+            max-width: 420px;
+            height: auto;
+            border-radius: 16px;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 0.8s ease 0.6s both;
+        }
+
+        .redirect-text {
+            font-size: 13px;
+            color: #6b8f6b;
+            margin-top: 16px;
+            animation: fadeInUp 0.8s ease 0.8s both;
+        }
+
+        .redirect-text a {
+            color: #2E7D32;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .redirect-text a:hover {
+            text-decoration: underline;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: #e8f5e9;
+            border-radius: 4px;
+            margin-top: 20px;
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease 1s both;
+        }
+
+        .progress-bar .fill {
+            height: 100%;
+            background: linear-gradient(90deg, #2E7D32, #66BB6A);
+            border-radius: 4px;
+            animation: progressFill 5s linear forwards;
+        }
+
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes progressFill {
+            from { width: 0%; }
+            to { width: 100%; }
+        }
+
+        @media (max-width: 480px) {
+            .welcome-container {
+                padding: 30px 20px;
+                border-radius: 18px;
+            }
+
+            .logo {
+                height: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="welcome-container">
+        <img src="logo.png" alt="Shanthi Wellness" class="logo">
+
+        <p class="message">
+            A special offer has been prepared for you as a token of appreciation for your <strong>valuable presence</strong>. Please click the link to claim it.
+        </p>
+
+        <img src="poster.jpeg" alt="Special Offer" class="poster">
+
+        <div class="progress-bar">
+            <div class="fill"></div>
+        </div>
+
+        <p class="redirect-text">
+            Redirecting in a few seconds... <br>
+            <a href="index.html">Click here to claim your offer</a>
+        </p>
+    </div>
+
+    <script>
+        // Redirect to index.html after 4 seconds
+        setTimeout(function() {
+            window.location.href = 'index.html';
+        }, 4000);
+    </script>
+
+</body>
+</html>
