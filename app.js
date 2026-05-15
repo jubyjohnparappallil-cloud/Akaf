@@ -74,20 +74,6 @@ document.getElementById('bookingForm').addEventListener('submit', function (e) {
 
     // Show success page
     function showSuccess() {
-        // Populate booking summary
-        document.getElementById('summaryName').textContent = name;
-        document.getElementById('summaryTreatment').textContent = treatment;
-        document.getElementById('summaryDate').textContent = formattedDate;
-        document.getElementById('summaryTime').textContent = time;
-        document.getElementById('summaryEmail').textContent = email;
-
-        // Switch to thank you view
-        document.getElementById('formSection').classList.add('hidden');
-        document.getElementById('thankYouSection').classList.remove('hidden');
-
-        // Scroll to top smoothly
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-
         // Build WhatsApp message (formatted for business)
         const whatsappText = encodeURIComponent(
             `🙏 *New Appointment Booking*\n` +
@@ -103,11 +89,8 @@ document.getElementById('bookingForm').addEventListener('submit', function (e) {
             `Booked via ${CLINIC_NAME} Online`
         );
 
-        // Open WhatsApp after showing success
-        setTimeout(function () {
-            // Use direct location change instead of window.open (works better on phones)
-            window.location.href = `https://wa.me/${BUSINESS_WHATSAPP}?text=${whatsappText}`;
-        }, 2500);
+        // Redirect to WhatsApp directly
+        window.location.href = `https://wa.me/${BUSINESS_WHATSAPP}?text=${whatsappText}`;
     }
 
     // Send email or skip if not configured
