@@ -105,13 +105,9 @@ document.getElementById('bookingForm').addEventListener('submit', function (e) {
 
         // Open WhatsApp after showing success
         setTimeout(function () {
-            window.open(`https://wa.me/${BUSINESS_WHATSAPP}?text=${whatsappText}`, '_blank');
+            // Use direct location change instead of window.open (works better on phones)
+            window.location.href = `https://wa.me/${BUSINESS_WHATSAPP}?text=${whatsappText}`;
         }, 2500);
-
-        // Redirect to home page after 6 seconds
-        setTimeout(function () {
-            window.location.href = 'index.html';
-        }, 6000);
     }
 
     // Send email or skip if not configured
