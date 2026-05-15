@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shanthi Wellness Medical Center</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #ffffff;
+            color: #2c3e2c;
+            line-height: 1.6;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 5%;
+            background: #ffffff;
+            border-bottom: 1px solid #e8f0e8;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .navbar .logo {
+            height: 60px;
+            object-fit: contain;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .social-links {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: #e8f5e9;
+            color: #2E7D32;
+            transition: all 0.2s;
+        }
+
+        .social-links a:hover {
+            background: #2E7D32;
+            color: #fff;
+        }
+
+        .btn-call {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            background: #2E7D32;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 24px;
+            font-size: 13px;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        .btn-call:hover {
+            background: #1B5E20;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            background: linear-gradient(135deg, #f1f8e9 0%, #e8f5e9 50%, #f9fbe7 100%);
+            text-align: center;
+            padding: 50px 5% 40px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(26px, 4vw, 42px);
+            color: #1B5E20;
+            margin-bottom: 10px;
+        }
+
+        .hero .subtitle {
+            font-size: clamp(13px, 2vw, 16px);
+            color: #6b8f6b;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .hero .description {
+            font-size: clamp(14px, 1.5vw, 16px);
+            color: #4a6b4a;
+            max-width: 650px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* ===== OFFERS SECTION ===== */
+        .offers-section {
+            padding: 50px 5%;
+            background: #ffffff;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 36px;
+        }
+
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(22px, 3vw, 32px);
+            color: #1B5E20;
+            margin-bottom: 6px;
+        }
+
+        .section-title p {
+            font-size: 14px;
+            color: #6b8f6b;
+        }
+
+        .offers-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .offer-card {
+            border-radius: 14px;
+            overflow: hidden;
+            background: #fff;
+            border: 1px solid #e4ede4;
+            box-shadow: 0 4px 20px rgba(30, 80, 30, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .offer-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(30, 80, 30, 0.12);
+        }
+
+        .offer-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .offer-card .card-footer {
+            padding: 16px;
+            text-align: center;
+            background: #fafdf9;
+            border-top: 1px solid #e8f0e8;
+        }
+
+        .btn-book {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #2E7D32, #1B5E20);
+            color: #ffffff;
+            border: none;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            font-family: inherit;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 14px rgba(30, 94, 32, 0.2);
+        }
+
+        .btn-book:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(30, 94, 32, 0.3);
+            background: linear-gradient(135deg, #1B5E20, #0d3b0f);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: #1B5E20;
+            color: #fff;
+            padding: 40px 5% 24px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 24px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .footer-col h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            color: #81C784;
+            margin-bottom: 12px;
+        }
+
+        .footer-col p {
+            font-size: 13px;
+            color: rgba(255,255,255,0.75);
+            margin-bottom: 6px;
+            line-height: 1.6;
+        }
+
+        .footer-col a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-col a:hover {
+            color: #81C784;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 12px;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .footer-bottom span {
+            color: #81C784;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 10px 4%;
+            }
+
+            .navbar .logo {
+                height: 48px;
+            }
+
+            .btn-call span {
+                display: none;
+            }
+
+            .btn-call {
+                padding: 8px;
+                border-radius: 50%;
+            }
+
+            .hero {
+                padding: 36px 5% 30px;
+            }
+
+            .offers-section {
+                padding: 36px 4%;
+            }
+
+            .offers-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 14px;
+            }
+
+            .offer-card .card-footer {
+                padding: 10px;
+            }
+
+            .btn-book {
+                padding: 9px 18px;
+                font-size: 12px;
+                gap: 5px;
+            }
+
+            .footer {
+                padding: 30px 5% 20px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .social-links {
+                display: none;
+            }
+
+            .offers-grid {
+                gap: 10px;
+            }
+
+            .btn-book {
+                padding: 8px 14px;
+                font-size: 11px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <img src="logo.png" alt="Shanthi Wellness" class="logo">
+        <div class="nav-right">
+            <div class="social-links">
+                <a href="https://www.instagram.com/shanthiwellnessuae/" target="_blank" aria-label="Instagram">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                </a>
+                <a href="https://www.facebook.com/ayurveddubai/" target="_blank" aria-label="Facebook">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+                <a href="https://www.youtube.com/@Shanthiwellnessuae/featured" target="_blank" aria-label="YouTube">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                </a>
+            </div>
+            <a href="tel:+97142255133" class="btn-call">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <span>Call Us</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>Welcome to Shanthi Wellness</h1>
+        <p class="subtitle">Relax &bull; Refresh &bull; Restore Balance</p>
+        <p class="description">
+            Step into a world of holistic healing. Our personalized wellness therapies, 
+            rooted in the ancient traditions of Ayurveda, are designed to calm the mind, 
+            relax the body, and restore your inner balance.
+        </p>
+    </section>
+
+    <!-- OFFERS -->
+    <section class="offers-section">
+        <div class="section-title">
+            <h2>Our Special Packages</h2>
+            <p>Exclusive wellness offers crafted for your well-being</p>
+        </div>
+
+        <div class="offers-grid">
+            <div class="offer-card">
+                <img src="image1.jpeg" alt="Individual Wellness Package">
+                <div class="card-footer">
+                    <a href="booking.html" class="btn-book">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        Book Now
+                    </a>
+                </div>
+            </div>
+
+            <div class="offer-card">
+                <img src="image 2.jpeg" alt="Family Wellness Package">
+                <div class="card-footer">
+                    <a href="booking.html" class="btn-book">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        Book Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Sharjah Branch</h4>
+                <p>P.O.Box: 64589, Sharjah, UAE</p>
+                <p><a href="tel:+97165558429">Call: +971 6 555 8429</a></p>
+                <p><a href="mailto:info@ayurvedauae.com">info@ayurvedauae.com</a></p>
+                <p><a href="https://wa.me/971528434127">WhatsApp: +971 52 843 4127</a></p>
+            </div>
+            <div class="footer-col">
+                <h4>Dubai Branch</h4>
+                <p>Suite M19, Royal House, Al Wuheida St, Hor Al Anz East, Dubai</p>
+                <p><a href="tel:+97142255133">Call: +971 4 225 5133</a></p>
+                <p><a href="mailto:doctor@ayurvedauae.com">doctor@ayurvedauae.com</a></p>
+                <p><a href="https://wa.me/971544630447">WhatsApp: +971 54 463 0447</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Shanthi Wellness Medical Center &bull; <span>Rooted in Nature, Guided by Tradition</span></p>
+        </div>
+    </footer>
+
+</body>
+</html>
